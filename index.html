@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Abril_Taco</div>
+      <ul>
+        <li><a href="#work" class="nav-btn">Work</a></li>
+        <li><a href="#about" class="nav-btn">About</a></li>
+        <li><a href="#contact" class="nav-btn">CV</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h1>Hi, I'm <span>Joy Aprilyn Tacugue</span></h1>
+      <p id="typed-text" class="typewriter-font"></p>
+      <!-- Social Media Icons Start -->
+      <div class="social-icons" style="margin-top: 40px;">
+        <a href="https://www.linkedin.com/in/tacugue-joy-aprilyn-r-a50125368/" target="_blank" title="LinkedIn" style="margin: 0 8px; color: #ffffff;"><i class="fab fa-linkedin fa-2x"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" title="Facebook" style="margin: 0 8px; color: #ffffff;"><i class="fab fa-facebook fa-2x"></i></a>
+        <a href="https://twitter.com/" target="_blank" title="Twitter" style="margin: 0 8px; color: #ffffff;"><i class="fab fa-twitter fa-2x"></i></a>
+        <a href="https://www.instagram.com/" target="_blank" title="Instagram" style="margin: 0 8px; color: #fdfdfd;"><i class="fab fa-instagram fa-2x"></i></a>
+        <a href="mailto:your.email@example.com" title="Email" style="margin: 0 8px; color: #ffffff;"><i class="fas fa-envelope fa-2x"></i></a>
+      </div>
+      <!-- Social Media Icons End -->
+    </div>
+  </header>
+  
+  <section id="what-can-i-do">
+    <div class="services-menu">
+      <button class="arrow left" id="prev-arrow"><i class="fas fa-chevron-left"></i></button>
+      <div id="services-container" class="services-container"></div>
+      <button class="arrow right" id="next-arrow"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a passionate graphic designer with experience in illustration and digital design. I love creating visually compelling designs that communicate and inspire.
+    </p>
+  </section>
+
+    <section id="work">
+    <h2>My Work</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="work1.jpg" alt="Project 1">
+        <h3>Project Title 1</h3>
+      </div>
+      <div class="portfolio-item">
+        <img src="work2.jpg" alt="Project 2">
+        <h3>Project Title 2</h3>
+      </div>
+      <div class="portfolio-item">
+        <img src="work3.jpg" alt="Project 3">
+        <h3>Project Title 3</h3>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <p>&copy; 2025 Joy Apriyln Tacugue. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Typewriter Effect
+    const text = "I'm a creative graphic designer based in The Philippines.";
+    const target = document.getElementById("typed-text");
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        target.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100);
+      }
+    }
+    typeWriter();
+
+    // Services slider logic
+    const services = [
+      {
+        icon: '<i class="fas fa-pen-nib"></i>',
+        title: "DIGITAL ILLUSTRATION",
+        desc: "For corporate branding and social media content."
+      },
+      {
+        icon: '<i class="fas fa-border-none"></i>',
+        title: "ASSET DEVELOPMENT",
+        desc: "I create icons, buttons, and graphics."
+      },
+      {
+        icon: '<i class="fas fa-pencil-alt"></i>',
+        title: "CUSTOM ILLUSTRATION",
+        desc: "Unique art pieces tailored to the client\'s needs."
+      },
+      {
+        icon: '<i class="fas fa-camera"></i>',
+        title: "PHOTOGRAPHY",
+        desc: "Professional photoshoots for products and people."
+      },
+      {
+        icon: '<i class="fas fa-paint-brush"></i>',
+        title: "APP DEVELOPING",
+        desc: "Traditional and digital painting services."
+      }
+    ];
+
+    let startIndex = 0;
+    const visibleCount = 4;
+
+    function renderServices() {
+      const container = document.getElementById('services-container');
+      container.innerHTML = '';
+      for (let i = startIndex; i < Math.min(startIndex + visibleCount, services.length); i++) {
+        const s = services[i];
+        const div = document.createElement('div');
+        div.className = 'service';
+        div.innerHTML = `
+          <div class="icon">${s.icon}</div>
+          <div class="title">${s.title}</div>
+          <div class="desc">${s.desc}</div>
+        `;
+        container.appendChild(div);
+      }
+    }
+
+    document.getElementById('prev-arrow').addEventListener('click', function() {
+      if (startIndex > 0) {
+        startIndex--;
+        renderServices();
+      }
+    });
+
+    document.getElementById('next-arrow').addEventListener('click', function() {
+      if (startIndex + visibleCount < services.length) {
+        startIndex++;
+        renderServices();
+      }
+    });
+
+    // Initial render
+    renderServices();
+  </script>
+</body>
+</html>
