@@ -20,8 +20,9 @@
     </nav>
     <div class="hero">
       <h1>Hi, I'm <span>Joy Aprilyn Tacugue</span></h1>
+        
       <p id="typed-text" class="typewriter-font"></p>
-      <!-- Social Media Icons Start -->
+
       <div class="social-icons" style="margin-top: 40px;">
         <a href="https://www.linkedin.com/in/tacugue-joy-aprilyn-r-a50125368/" target="_blank" title="LinkedIn" style="margin: 0 8px; color: #ffffff;"><i class="fab fa-linkedin fa-2x"></i></a>
         <a href="https://www.facebook.com/" target="_blank" title="Facebook" style="margin: 0 8px; color: #ffffff;"><i class="fab fa-facebook fa-2x"></i></a>
@@ -29,7 +30,7 @@
         <a href="https://www.instagram.com/" target="_blank" title="Instagram" style="margin: 0 8px; color: #fdfdfd;"><i class="fab fa-instagram fa-2x"></i></a>
         <a href="mailto:your.email@example.com" title="Email" style="margin: 0 8px; color: #ffffff;"><i class="fas fa-envelope fa-2x"></i></a>
       </div>
-      <!-- Social Media Icons End -->
+    
     </div>
   </header>
   
@@ -72,7 +73,6 @@
   </footer>
 
   <script>
-    // Typewriter Effect
     const text = "I'm a creative graphic designer based in The Philippines.";
     const target = document.getElementById("typed-text");
     let i = 0;
@@ -84,13 +84,21 @@
       }
     }
     typeWriter();
-
-    // Services slider logic
     const services = [
       {
         icon: '<i class="fas fa-pen-nib"></i>',
         title: "DIGITAL ILLUSTRATION",
-        desc: "For corporate branding and social media content."
+        desc: "For Digital Arts and social media content."
+      },
+      {
+        icon: '<i class="fas fa-pencil-alt"></i>',
+        title: "CUSTOM ILLUSTRATION",
+        desc: "Unique art pieces tailored to the client\'s needs."
+      },
+       {
+        icon: '<i class="fa-gamepad"></i>',
+        title: "Pixel Art",
+        desc: "Vibrant and detailed pixel art illustrations, for games, icons, avatars."
       },
       {
         icon: '<i class="fas fa-border-none"></i>',
@@ -98,19 +106,9 @@
         desc: "I create icons, buttons, and graphics."
       },
       {
-        icon: '<i class="fas fa-pencil-alt"></i>',
-        title: "CUSTOM ILLUSTRATION",
-        desc: "Unique art pieces tailored to the client\'s needs."
-      },
-      {
-        icon: '<i class="fas fa-camera"></i>',
-        title: "PHOTOGRAPHY",
-        desc: "Professional photoshoots for products and people."
-      },
-      {
-        icon: '<i class="fas fa-paint-brush"></i>',
+        icon: '<i class="fa fa-mobile"></i>',
         title: "APP DEVELOPING",
-        desc: "Traditional and digital painting services."
+        desc: "Design and develop intuitive and user-friendly applications."
       }
     ];
 
@@ -147,7 +145,6 @@
       }
     });
 
-    // Initial render
     renderServices();
   </script>
 </body>
