@@ -534,4 +534,25 @@ body {
   .arrow {
     font-size: 1.5rem !important;
   }
-} fix and complete the code,dont change anything
+
+  /* ✅ FIXED: Ensure portfolio images*/
+@media (max-width: 600px) {
+  .portfolio-item {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: hidden !important;
+  }
+
+  .portfolio-item img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    border-radius: 6px !important;
+  }
+}
+
+} 
+
+
