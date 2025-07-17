@@ -509,7 +509,7 @@ body {
     padding: 10px 6px 10px 6px !important;
   }
   section {
-    padding: 16px 2% 10px 2% !important;
+    padding: inherit;
     margin-bottom: 8px !important;
   }
   footer {
