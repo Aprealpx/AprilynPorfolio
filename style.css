@@ -519,7 +519,7 @@ body {
   }
   img, .carousel-inner img, .portfolio-item img, .about-me-image img {
     width: 100% !important;
-    height: auto !important;
+    height: 200px !important;
     max-width: 100vw !important;
   }
   body, html {
